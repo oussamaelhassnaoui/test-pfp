@@ -1700,12 +1700,12 @@ const app = new App();
         const detectedLanguage = detectLanguage();
         
         // If we're on the main page and the detected language is not English
-        if ((currentPath === '/' || currentPath === '/index.html') && detectedLanguage !== 'en') {
+        if ((currentPath === '/' || currentPath === '/') && detectedLanguage !== 'en') {
             const languagePages = {
-                'fr': '/Fr/index.html',
-                'de': '/De/index.html',
-                'es': '/Es/index.html',
-                'ar': '/Ar/index.html'
+                'fr': '/Fr/',
+                'de': '/De/',
+                'es': '/Es/',
+                'ar': '/Ar/'
             };
             
             if (languagePages[detectedLanguage]) {
@@ -1734,13 +1734,13 @@ const app = new App();
         
         // Set the selected language based on current page
         const currentPath = window.location.pathname;
-        if (currentPath.includes('/Fr/index.html')) {
+        if (currentPath.includes('/Fr/')) {
             languageSelector.value = 'fr';
-        } else if (currentPath.includes('/De/index.html')) {
+        } else if (currentPath.includes('/De/')) {
             languageSelector.value = 'de';
-        } else if (currentPath.includes('/Es/index.html')) {
+        } else if (currentPath.includes('/Es/')) {
             languageSelector.value = 'es';
-        } else if (currentPath.includes('/Ar/index.html')) {
+        } else if (currentPath.includes('/Ar/')) {
             languageSelector.value = 'ar';
         } else {
             languageSelector.value = 'en';
@@ -1750,11 +1750,11 @@ const app = new App();
         languageSelector.addEventListener('change', function() {
             const selectedLanguage = this.value;
             const languagePages = {
-                'en': '/index.html',
-                'fr': '/Fr/index.html',
-                'de': '/De/index.html',
-                'es': '/Es/index.html',
-                'ar': '/Ar/index.html'
+                'en': '/',
+                'fr': '/Fr/',
+                'de': '/De/',
+                'es': '/Es/',
+                'ar': '/Ar/'
             };
             
             if (languagePages[selectedLanguage]) {
